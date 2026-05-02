@@ -65,8 +65,7 @@ kubectl get pv,pvc -n fifa2026
 ## Step 2 — Seed FIFA 2026 Data
 
 ```bash
-# Populate MongoDB with venues, teams and matches
-bash seed-fifa2026.sh
+# Populate MongoDB with venues, teams and matches as mentioned under Infra Folder
 ```
 
 This creates 3 collections:
@@ -233,17 +232,3 @@ sh -x Infra/mongo_setup.sh
 ```
 
 ---
-
-## Key Concepts Learned
-
-| Concept | Where |
-|---|---|
-| Kubernetes Namespace | `deploy-mongodb.sh` step 1 |
-| Kubernetes Secret | `deploy-mongodb.sh` step 2 |
-| PersistentVolume + PVC | `deploy-mongodb.sh` steps 3-4 |
-| Kubernetes Deployment | `deploy-mongodb.sh` step 5 |
-| Kubernetes Service (NodePort) | `deploy-mongodb.sh` step 6 |
-| MongoDB Collections + Documents | `seed-fifa2026.sh` |
-| Google ADK Agent + Tools | `agent.py` + `tools.py` |
-| ADK Runner + Sessions | `ui.py` |
-| Gradio Chat UI | `ui.py` |
