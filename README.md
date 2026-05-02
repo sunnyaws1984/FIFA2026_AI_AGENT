@@ -5,20 +5,6 @@ Built with **Google ADK**, **MongoDB on Kubernetes**, and a **Gradio** chat UI.
 
 ---
 
-## Project Structure
-
-```
-fifa2026-agent/
-├── agent.py          ← ADK root agent (brain of the app)
-├── tools.py          ← MongoDB query functions (eyes of the app)
-├── ui.py             ← Gradio chat interface (face of the app)
-├── requirements.txt  ← Python dependencies
-├── deploy-mongodb.sh ← Deploy MongoDB to Kubernetes
-└── seed-fifa2026.sh  ← Populate MongoDB with FIFA 2026 data
-```
-
----
-
 ## Architecture
 
 ```
