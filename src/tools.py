@@ -1,7 +1,11 @@
+import os
 from pymongo import MongoClient
 
 # ── MongoDB Connection ─────────────────────────────────────────────────────
-MONGO_URI = "mongodb://admin:admin123@localhost:27017/fifa2026?authSource=admin"
+# host.docker.internal = your laptop from inside Docker container
+MONGO_HOST = os.getenv("MONGO_HOST", "host.docker.internal")
+MONGO_PORT = int(os.getenv("MONGO_PORT", "27017"))
+MONGO_URI  = f"mongodb://admin:admin123@{MONGO_HOST}:{MONGO_PORT}/fifa2026?authSource=admin"
 
 def get_client():
     client = MongoClient(MONGO_URI)
