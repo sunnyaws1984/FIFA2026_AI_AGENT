@@ -240,7 +240,7 @@ sh -x Infra/mongo_setup.sh
 docker build -t fifa2026-agent .
 
 # 2. Run with secrets injected at runtime
-docker run -p -d 7860:7860 \
+docker run -p 7860:7860 \
   --env-file .env \
   -e MONGO_HOST=host.docker.internal \
   -e MONGO_PORT=27017 \
@@ -255,6 +255,6 @@ kubectl create secret generic agent-secret \
   --from-literal=GOOGLE_API_KEY=your-gemini-key-here \
   -n fifa2026
 
-sh -x k8.sh
+kubectl apply -f k8.yaml -n fifa2026
 kubectl get all -n fifa2026
 ```
